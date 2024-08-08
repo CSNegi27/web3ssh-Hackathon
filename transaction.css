@@ -1,0 +1,41 @@
+/* Add this to your existing styles.css file */
+
+/* Transaction Section */
+.transactions {
+    padding: 2rem;
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.transactions .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.transactions h2 {
+    color: #1E90FF;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.transaction-item {
+    background-color: #2F4F4F;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #F5F5F5;
+}
+
+.transaction-item p {
+    margin: 0.5rem 0;
+}
+
+.transaction-item p strong {
+    color: #1E90FF;
+}

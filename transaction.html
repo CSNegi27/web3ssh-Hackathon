@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Theme UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Blockchain Logo">
+                </div>
+            <h1>Blockchainer's Dashboard</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="transaction.html">Transactions</a>
+                <a href="setting.html">Settings</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="transactions">
+    <div class="container">
+        <h2>Transaction History</h2>
+        <div class="transaction-list">
+            <div class="transaction-item">
+                <p><strong>Transaction ID:</strong> 0xabc123...</p>
+                <p><strong>Status:</strong> Success</p>
+                <p><strong>Amount:</strong> 0.5 BTC</p>
+                <p><strong>Date:</strong> Aug 8, 2024</p>
+            </div>
+            <div class="transaction-item">
+                <p><strong>Transaction ID:</strong> 0xdef456...</p>
+                <p><strong>Status:</strong> Pending</p>
+                <p><strong>Amount:</strong> 1.2 BTC</p>
+                <p><strong>Date:</strong> Aug 7, 2024</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Blockchainer's. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeSelect = document.getElementById('theme');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+            document.body.classList.toggle('light-theme', currentTheme === 'light');
+            themeSelect.value = currentTheme;
+        
+            themeSelect.addEventListener('change', (event) => {
+                const newTheme = event.target.value;
+                document.body.classList.toggle('light-theme', newTheme === 'light');
+                localStorage.setItem('theme', newTheme); 
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.settings form');
+            
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); 
+                
+                const formData = new FormData(form);
+                const data = {
+                    theme: formData.get('theme'),
+                    notifications: formData.get('notifications') ? 'Enabled' : 'Disabled',
+                    language: formData.get('language')
+                };
+        
+                alert(`Settings saved:\nTheme: ${data.theme}\nNotifications: ${data.notifications}\nLanguage: ${data.language}`);
+            });
+        });
+        </script>
+</footer>
+</body>
+</html>

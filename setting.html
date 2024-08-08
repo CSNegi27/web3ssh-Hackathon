@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Theme UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Blockchain Logo">
+            </div>
+            <h1>Blockchainer's Dashboard</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="transaction.html">Transactions</a>
+                <a href="setting.html">Settings</a>
+            </nav>
+        </div>
+    </header>
+    <section class="settings">
+        <div class="container">
+            <h2>Settings</h2>
+            <form>
+                <div class="form-group">
+                    <label for="theme">Theme</label>
+                    <select id="theme" name="theme">
+                        <option value="dark" selected>Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="notifications">Enable Notifications</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="notifications" name="notifications" checked>
+                        <label for="notifications"></label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select id="language" name="language">
+                        <option value="en" selected>English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="sp">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+    
+                <button type="submit" class="btn-save">Save Changes</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Blockchainer's. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeSelect = document.getElementById('theme');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+            document.body.classList.toggle('light-theme', currentTheme === 'light');
+            themeSelect.value = currentTheme;
+        
+            themeSelect.addEventListener('change', (event) => {
+                const newTheme = event.target.value;
+                document.body.classList.toggle('light-theme', newTheme === 'light');
+                localStorage.setItem('theme', newTheme); 
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.settings form');
+            
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); 
+                
+                const formData = new FormData(form);
+                const data = {
+                    theme: formData.get('theme'),
+                    notifications: formData.get('notifications') ? 'Enabled' : 'Disabled',
+                    language: formData.get('language')
+                };
+        
+                alert(`Settings saved:\nTheme: ${data.theme}\nNotifications: ${data.notifications}\nLanguage: ${data.language}`);
+            });
+        });
+        </script>
+    </body>
+    </html>

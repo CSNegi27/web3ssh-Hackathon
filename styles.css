@@ -1,0 +1,298 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #F5F5F5;
+    background-color: #121212;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    border-radius: 50%;
+    max-width: 80px; 
+    height: auto;
+}
+
+header {
+    background-color: #1E1E1E;
+    padding: 1rem;
+}
+
+header .container {
+    margin-left: auto ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #1E90FF;
+    margin: 0;
+}
+
+header nav a {
+    color: #F5F5F5;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    color: #1E90FF;
+}
+
+main {
+    padding: 2rem;
+}
+
+.dashboard {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+.card h2 {
+    color: #1E90FF;
+    margin: 0 0 0.5rem;
+}
+
+.card p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.notifications {
+    margin-top: 2rem;
+}
+
+.notification {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.notification.success {
+    background-color: #00FF00;
+    color: #121212;
+}
+
+.notification.error {
+    background-color: #FF4C4C;
+    color: #F5F5F5;
+}
+
+.notification.info {
+    background-color: #1E90FF;
+    color: #F5F5F5;
+}
+
+footer {
+    background-color: #1E1E1E;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #F5F5F5;
+}
+
+/* Transaction Section */
+.transactions {
+    padding: 2rem;
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.transactions .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.transactions h2 {
+    color: #1E90FF;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.transaction-item {
+    width: 500px;
+    background-color: #2F4F4F;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #F5F5F5;
+}
+
+.transaction-item p {
+    margin: 0.5rem 0;
+}
+
+.transaction-item p strong {
+    color: #1E90FF;
+}
+
+/* Settings Section */
+.settings {
+    padding: 2rem;
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.settings .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settings h2 {
+    color: #1E90FF;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #F5F5F5;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #2F4F4F;
+    border-radius: 4px;
+    background-color: #2F4F4F;
+    color: #F5F5F5;
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-switch {
+    display: inline-flex;
+    align-items: center;
+}
+
+.toggle-switch input[type="checkbox"] + label {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    background-color: #2F4F4F;
+    border-radius: 13px;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch input[type="checkbox"]:checked + label {
+    background-color: #00FF00;
+}
+
+.toggle-switch label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch input[type="checkbox"]:checked + label::before {
+    transform: translateX(24px);
+}
+
+.btn-save {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #1E90FF;
+    color: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+    background-color: #1C86EE;
+}
+
+/* Light Theme Styles */
+.light-theme {
+    background-color: #F5F5F5;
+    color: #1b958b;
+}
+
+.light-theme .settings,
+.light-theme .dashboard {
+    border-radius: 10%;
+    background-color: #c26d6d;
+}
+
+.light-theme .settings h2,
+.light-theme .dashboard .card h2 {
+    color: #1E90FF;
+}
+
+.light-theme .form-group select {
+    background-color: #FFFFFF;
+    color: #121212;
+}
+
+.light-theme .toggle-switch input[type="checkbox"]:checked + label {
+    background-color: #00FF00;
+}
+
+.light-theme .toggle-switch label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.light-theme .toggle-switch input[type="checkbox"]:checked + label::before {
+    transform: translateX(24px);
+}
+
+.light-theme .btn-save {
+    background-color: #1E90FF;
+    color: #121212;
+}
+
+.light-theme .btn-save:hover {
+    background-color: #1C86EE;
+}
